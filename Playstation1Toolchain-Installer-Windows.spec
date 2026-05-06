@@ -21,7 +21,7 @@ exe = EXE(
     a.scripts,
     a.binaries,
     a.datas,
-    [('v', None, 'OPTION')],
+    [],
     name='Playstation1Toolchain-Installer-Windows',
     debug=False,
     bootloader_ignore_signals=False,
@@ -35,4 +35,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    version='version.txt',
+    uac_admin=True,
+    icon=['Logo.ico'],
 )

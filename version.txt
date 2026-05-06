@@ -1,0 +1,32 @@
+# UTF-8
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(1, 1, 0, 0),
+    prodvers=(1, 1, 0, 0),
+    mask=0x3f,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0)
+  ),
+  kids=[
+    StringFileInfo(
+      [
+        StringTable(
+          '040904B0',
+          [
+            StringStruct('CompanyName', 'LukieD4'),
+            StringStruct('FileDescription', 'Playstation 1 Toolchain Installer'),
+            StringStruct('FileVersion', '1.1.0'),
+            StringStruct('InternalName', 'Playstation1ToolchainInstaller'),
+            StringStruct('OriginalFilename', 'Playstation1Toolchain-Installer-Windows.exe'),
+            StringStruct('ProductName', 'Playstation 1 Toolchain Installer'),
+            StringStruct('ProductVersion', '1.1.0')
+          ]
+        )
+      ]
+    ),
+    VarFileInfo([VarStruct('Translation', [1033, 1200])])
+  ]
+)
