@@ -793,10 +793,23 @@ def command_list() -> int:
     return 0
 
 
+def is_already_installed(release: ReleaseInfo) -> bool:
+    """Return True if the target version folder already exists on disk."""
+    folder_name = Path(release.zip_asset_name).stem   # e.g. PSn00bSDK-0.24-win32
+    return (APP_ROOT / folder_name).is_dir()
+
+
 def command_install(args: argparse.Namespace, replace_existing: bool) -> int:
     if getattr(args, "deps", False):
         ensure_msys2_toolchain(cmake_version=getattr(args, "cmake_version", None))
     release = resolve_release_for_install(args)
+
+    if replace_existing and is_already_installed(release):
+        info(f"PSn00bSDK {release.tag_name} is already installed and up to date.")
+        info(f"  Location : {APP_ROOT / Path(release.zip_asset_name).stem}")
+        input("\nPress Enter to close this window ...")
+        return 0
+
     install_release(release, replace_existing=replace_existing)
     return 0
 
